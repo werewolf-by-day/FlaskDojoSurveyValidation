@@ -8,6 +8,13 @@
   <body>
     <div id="wrapper">
       <form action="/process" method="post">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
         <fieldset>
         Your Name: <input type="text" name="name">
         </fieldset>
@@ -31,7 +38,7 @@
           <option>Other</option></select>
         </fieldset>
         <fieldset>
-        Comment (optional):<p></p>
+        Comment (max of 120 characters):<p></p>
         <textarea name="textarea" value = "textbox" rows="4" cols="50" name="comment" ></textarea>
         <input type="submit" value="Button">
       </fieldset>
