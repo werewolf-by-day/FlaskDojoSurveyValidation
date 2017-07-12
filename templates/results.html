@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Submitted Info</h1>
+      <p>Name: {{request.form['name']}}</p>
+      <p>Dojo Location: {{request.form['location']}}</p>
+      <p>Favorite Language: {{request.form['fav_language']}}</p>
+      <p>Comment: {{comment}}</p>
+      <form action="/back" method="post">
+      <input type="submit" value="Go Back"></form>
+    </div>
+  </body>
+</html>
